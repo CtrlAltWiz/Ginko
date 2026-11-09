@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ginko_terminal_history
+commands.json
+.DS_Store
