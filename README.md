@@ -5,10 +5,6 @@
 </p>
 
 <p align="center">
-  <strong>A little smarter. A lot less typing.</strong>
-</p>
-
-<p align="center">
   A lightweight, history-aware terminal companion for macOS and Linux.
 </p>
 
@@ -23,8 +19,6 @@
 ## Hello, Ginko!
 
 The terminal is one of the most powerful tools on your computer. But remembering every command you've ever typed is another story.
-
-**Meet Ginko.**
 
 Ginko is a small, Python-powered interactive terminal that makes everyday command-line work a little easier. It remembers commands you've used, offers subtle inline suggestions, and helps you spend less time typing the same things over and over.
 
@@ -58,13 +52,7 @@ Ginko's suggestions appear directly beside your input in subtle gray text, ready
 
 Start typing, spot a suggestion, and press `Tab` or `Right Arrow` to complete it.
 
-That's Ginko doing its thing.
-
 ---
-
-## Getting Started
-
-Ginko is designed to be easy to set up and even easier to use.
 
 ### Requirements
 
@@ -182,7 +170,7 @@ This runs the test suite using Python's built-in `unittest` framework.
 
 ## A Few Things Worth Knowing
 
-Ginko is a terminal interface, which means the commands you enter are executed through your system shell.
+Ginko works in the terminal interface, which means the commands you enter are executed through your system shell.
 
 Keep these details in mind:
 
@@ -196,13 +184,9 @@ As with any terminal, it's worth knowing what a command does before pressing Ent
 
 ---
 
-## Made for the Power Users
+## Made for the Power-Users
 
-Ginko is part of the **CtrlAltWiz** collection of small, practical software projects exploring the fun side of computing.
-
-The idea is simple: build tools that solve everyday problems, keep them approachable, and leave a little room for experimentation along the way.
-
-Whether you're managing a Linux server, working on a macOS project, or simply spending a little too much time in the command line, Ginko is here to make those keystrokes count.
+Ginko is part of my collection of small, practical software projects exploring the fun side of computing, with the simple idea of building tools that solve everyday problems, while keeping them approachable and leaving a little room for experimentation along the way.
 
 **Explore more:** [CtrlAltWiz](https://ctrlaltwiz.net)
 
@@ -225,9 +209,5 @@ Ginko is open-source software distributed under the [MIT License](LICENSE).
 </p>
 
 <p align="center">
-  <em>Keep typing. Keep tinkering.</em>
-</p>
-
-<p align="center">
-  Curiously crafted by CtrlAltWiz.
+  <em>Curiously crafted by CtrlAltWiz.</em>
 </p>
