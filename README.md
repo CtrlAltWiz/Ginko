@@ -1,70 +1,233 @@
 # Ginko Terminal
 
 <p align="center">
-	<img src="assets/ginkgo-icon.png" alt="Golden pixel-art ginkgo leaf" width="240">
+  <img src="assets/ginkgo-icon.png" alt="Ginko Terminal — golden pixel-art ginkgo leaf" width="220">
 </p>
 
 <p align="center">
-	Artwork by <a href="https://www.vecteezy.com/members/dikwazousky">Dwiki Satya Dharma</a> via Vecteezy.
+  <strong>A little smarter. A lot less typing.</strong>
 </p>
 
-Ginko is a small Python command prompt with gray inline suggestions from command history and an optional command catalog. Suggestions are shown only for commands available on the current machine. Press Tab or Right Arrow to accept one.
+<p align="center">
+  A lightweight, history-aware terminal companion for macOS and Linux.
+</p>
 
-## Requirements
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=flat-square" alt="Python 3">
+  <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+</p>
+
+---
+
+## Hello, Ginko!
+
+The terminal is one of the most powerful tools on your computer. But remembering every command you've ever typed is another story.
+
+**Meet Ginko.**
+
+Ginko is a small, Python-powered interactive terminal that makes everyday command-line work a little easier. It remembers commands you've used, offers subtle inline suggestions, and helps you spend less time typing the same things over and over.
+
+No complicated interface or unnecessary bells and whistles. Just a familiar terminal with a few thoughtful conveniences.
+
+### What's Inside?
+
+- **Smart Suggestions** — See subtle gray command completions as you type.
+- **Command History** — Reuse commands from previous sessions without digging through your history.
+- **Tab to Complete** — Press `Tab` or `Right Arrow` to accept an inline suggestion.
+- **Optional Command Library** — Import command names from a Markdown reference to expand available suggestions.
+- **System-Aware Suggestions** — Ginko checks whether the suggested command is available on your machine.
+- **Root Session Support** — Use Ginko from an existing root shell, with a distinct prompt and separate history.
+- **Lightweight by Design** — Built with Python and `prompt_toolkit`, without a heavyweight application framework.
+
+Ginko keeps things simple, just as a terminal should.
+
+---
+
+## A Little Look Around
+
+Ginko's suggestions appear directly beside your input in subtle gray text, ready when you need them and out of the way when you don't.
+
+**Example 1**
+
+<img width="260" height="42" alt="Ginko Terminal inline command suggestion example" src="https://github.com/user-attachments/assets/9915b64e-7ce3-4593-ac8f-1c5316e219df" />
+
+**Example 2**
+
+<img width="278" height="46" alt="Ginko Terminal command completion example" src="https://github.com/user-attachments/assets/66715a6a-4e5f-48cf-a5c9-99b520489fb7" />
+
+Start typing, spot a suggestion, and press `Tab` or `Right Arrow` to complete it.
+
+That's Ginko doing its thing.
+
+---
+
+## Getting Started
+
+Ginko is designed to be easy to set up and even easier to use.
+
+### Requirements
+
+Before getting started, you'll need:
 
 - Python 3
 - `prompt_toolkit` 3.x
-- macOS or Linux with an interactive terminal
+- macOS or Linux
+- An interactive terminal
 
-Install the dependency:
+### 1. Install Dependencies
 
-```sh
+From the project directory, run:
+
+```bash
 python3 -m pip install -r requirements.txt
 ```
 
-## Run
+### 2. Launch Ginko
 
-Start the prompt directly:
+Start the interactive terminal:
 
-```sh
+```bash
 python3 ginko_terminal.py
 ```
 
-On macOS, the optional setup wizard can import command names from a Markdown reference and add a `ginko` function to zsh:
+And you're in.
 
-```sh
+Ginko will begin offering suggestions as you type, based on your command history and any configured command catalog.
+
+### 3. Optional macOS Setup
+
+For macOS users, Ginko includes a setup wizard to make things a little more convenient.
+
+```bash
 python3 ginko_terminal.py --setup
 ```
 
-The wizard defaults to installing a copy at `~/ginko_terminal.py`. It can optionally start Ginko in interactive zsh sessions. Linux users can run the program directly; the setup wizard is macOS-only.
+The wizard can:
 
-## Root Sessions
+- Install a copy of Ginko at `~/ginko_terminal.py`.
+- Import command names from a Markdown reference.
+- Add a `ginko` function to your zsh configuration.
+- Optionally start Ginko automatically in interactive zsh sessions.
 
-To run Ginko from an existing root shell, start it with a Python interpreter that has `prompt_toolkit` installed:
+Once configured, launch it using:
 
-```sh
+```bash
+ginko
+```
+
+**Linux users:** Ginko works directly through Python. The setup wizard is currently available for macOS only.
+
+---
+
+## How Suggestions Work
+
+Ginko uses two sources to offer inline completions:
+
+**1. Your Command History**
+
+Commands you've previously entered can become suggestions the next time you type.
+
+**2. Your Command Catalog**
+
+You can optionally provide a Markdown reference containing command names. Ginko uses these names to expand its completion options.
+
+Before suggesting a command, Ginko checks whether the command is available in the current environment.
+
+This helps keep suggestions relevant to the machine you're actually using.
+
+**A quick note:** Ginko checks command availability, not whether an entire command or its arguments are valid or safe to execute.
+
+---
+
+## Running as Root
+
+For advanced system administration, Ginko can run inside an existing root shell.
+
+```bash
 sudo -i
 python3 /Users/your-user/ginko_terminal.py
 ```
 
-The prompt changes to `gzh#` and Ginko prints a root-session warning. Every command entered in that session runs with root privileges. Root history is stored separately from the regular user's history. When available, Ginko reuses the invoking user's command catalog.
+Make sure the Python interpreter used in the root session has `prompt_toolkit` installed.
 
-Prefer running Ginko as a regular user and using `sudo` only for individual commands that require it.
+When running with root privileges:
 
-## Tests
+- The prompt changes to `gzh#`.
+- A root-session warning appears.
+- Command history is stored separately from regular user history.
+- Ginko reuses the invoking user's command catalog when available.
 
-Run the unit tests with:
+**A word of caution:** Every command executed in a root session runs with root privileges.
 
-```sh
+For everyday work, it's better to run Ginko as a regular user and use `sudo` for individual administrative commands.
+
+A little caution goes a long way when you're one keystroke away from modifying your operating system.
+
+---
+
+## Running Tests
+
+Want to check that everything is behaving?
+
+Run the included unit tests:
+
+```bash
 python3 -m unittest discover -s tests -v
 ```
 
-## Safety Notes
+This runs the test suite using Python's built-in `unittest` framework.
 
-- Ginko executes entered commands through the system shell. Suggestions only check whether a command name is available; they do not validate arguments or guarantee a command is safe.
-- In a root session, commands have root privileges and can modify or damage the system.
-- The command catalog contains names only. Availability varies by operating system, installed packages, shell, and `PATH`.
+---
+
+## A Few Things Worth Knowing
+
+Ginko is a terminal interface, which means the commands you enter are executed through your system shell.
+
+Keep these details in mind:
+
+- Ginko does not sandbox commands or prevent destructive operations.
+- Inline suggestions do not guarantee that commands are safe.
+- Running Ginko as root gives entered commands root privileges.
+- Available commands differ between macOS, Linux distributions, installed packages, and configured `PATH` directories.
+- The optional command catalog stores command names rather than full command documentation.
+
+As with any terminal, it's worth knowing what a command does before pressing Enter.
+
+---
+
+## Made for the Power Users
+
+Ginko is part of the **CtrlAltWiz** collection of small, practical software projects exploring the fun side of computing.
+
+The idea is simple: build tools that solve everyday problems, keep them approachable, and leave a little room for experimentation along the way.
+
+Whether you're managing a Linux server, working on a macOS project, or simply spending a little too much time in the command line, Ginko is here to make those keystrokes count.
+
+**Explore more:** [CtrlAltWiz](https://ctrlaltwiz.net)
+
+---
+
+## Credits
+
+The golden ginkgo leaf artwork was created by [Dwiki Satya Dharma](https://www.vecteezy.com/members/dikwazousky) via Vecteezy.
+
+Ginko Terminal is a CtrlAltWiz project.
 
 ## License
 
-Ginko is distributed under the MIT License. See [LICENSE](LICENSE).
+Ginko is open-source software distributed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <strong>Ginko Terminal</strong>
+</p>
+
+<p align="center">
+  <em>Keep typing. Keep tinkering.</em>
+</p>
+
+<p align="center">
+  Curiously crafted by CtrlAltWiz.
+</p>
