@@ -1,5 +1,13 @@
 # Ginko Terminal
 
+<p align="center">
+	<img src="assets/ginkgo-icon.png" alt="Golden pixel-art ginkgo leaf" width="240">
+</p>
+
+<p align="center">
+	Artwork by <a href="https://www.vecteezy.com/members/dikwazousky">Dwiki Satya Dharma</a> via Vecteezy.
+</p>
+
 Ginko is a small Python command prompt with gray inline suggestions from command history and an optional command catalog. Suggestions are shown only for commands available on the current machine. Press Tab or Right Arrow to accept one.
 
 ## Requirements
